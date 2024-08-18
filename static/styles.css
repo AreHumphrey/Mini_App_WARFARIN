@@ -5,15 +5,15 @@ body, html {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Поднимаем все элементы вверх */
-    background-color: #F5FBF7; /* Фон страницы */
+    align-items: flex-start;
+    background-color: #F5FBF7;
 }
 
 .container {
     width: 100%;
-    max-width: 360px; /* Ограничение максимальной ширины экрана */
+    max-width: 360px;
     height: 100%;
-    max-height: 640px; /* Ограничение максимальной высоты экрана */
+    max-height: 640px;
     background-color: #F5FBF7;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@ body, html {
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
-    margin-top: 20px; /* Добавляем отступ сверху для лучшего визуального эффекта */
+    margin-top: 20px;
 }
 
 header, footer {
@@ -33,7 +33,7 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Поднимаем элементы в main вверх */
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -42,23 +42,25 @@ main {
 }
 
 h1 {
-    font-size: 45px; /* Увеличиваем размер шрифта */
-    margin-bottom: 10px;
-    margin-top: -30px;
-    font-weight: bold;
-    letter-spacing: 2px; /* Добавляем межбуквенный интервал для большего эффекта */
-    text-transform: uppercase; /* Делаем текст заглавными буквами */
-
+    font-size: 45px;
+    margin-bottom: -10px;
+    margin-top: -40px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     background-image: linear-gradient(to right, #0A5976, #0D95B2);
-    -webkit-background-clip: text; /* Используем градиент как текстовую заливку */
-    -webkit-text-fill-color: transparent; /* Делаем текст прозрачным, чтобы был виден градиент */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', monospace;
 }
 
 
 p {
     font-size: 14px;
     margin: 10px 0 30px 0;
-    color: #666;
+    color: #2C2C2C;
+    font-weight: bold;
+    font-family: 'Poppins', monospace;
 }
 
 .button-group {
@@ -66,24 +68,51 @@ p {
     flex-direction: column;
     align-items: center;
     align-content: center;
-    gap: 30px;
+    gap: 15px;
     width: 100%;
+}
+
+.button svg {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.button span {
+    line-height: 1;
+    vertical-align: middle;
 }
 
 .button {
     display: block;
     width: 160px;
-    padding: 15px;
+    padding: 13px;
     text-align: center;
     border-radius: 25px;
     text-decoration: none;
     font-size: 16px;
+    font-family: 'Poppins', monospace;
     font-weight: bold;
-    background-color: #1D8DAD; /* Основной цвет кнопки */
+    background-color: #1D8DAD;
     color: #fff;
 }
 
 .secondary-button {
-    background-color: #0C5979; /* Второй цвет кнопки */
+    background-color: #0C5979;
     color: #fff;
+}
+
+.footer-p {
+    font-size: 12px;
+    color: #2C2C2C;
+    font-weight: 400;
+    font-family: 'Poppins', monospace;
+    text-align: center;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    width: 70%;
+    align-self: center;
+    margin-top: 10%;
 }

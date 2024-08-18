@@ -6,23 +6,40 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <title>WARFARIN</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <main>
-            <div class="logo">
-                <img src="{{ url_for('static', filename='images/warfarin.png') }}" alt="WARFARIN Logo">
-            </div>
-            <h1>WARFARIN</h1>
-            <p>ваше здоровье — наш приоритет</p>
-            <div class="button-group">
-                <a href="/book" class="button primary-button">Запись к врачу</a>
-                <a href="/online" class="button secondary-button">Врачи онлайн</a>
-            </div>
-        </main>
-        <footer>
-            <p>Теперь вы можете получить консультацию мгновенно через Telegram</p>
-        </footer>
-    </div>
+<div class="container">
+    <main>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/warfarin.png') }}" alt="WARFARIN Logo">
+        </div>
+        <h1>WARFARIN</h1>
+        <p>ваше здоровье — наш приоритет</p>
+        <div class="button-group">
+            <a href="/book" class="button primary-button">
+                <svg width="22" height="21" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.8334 42.5V46.75H6.50002C4.11669 46.75 2.16669 44.8375 2.16669 42.5V8.5C2.16669 6.1625 4.11669 4.25 6.50002 4.25H45.5C47.8834 4.25 49.8334 6.1625 49.8334 8.5V25.7125L49.4 25.2875C48.3167 24.225 47.0167 23.5875 45.5 23.5875V12.75H6.50002V42.5H23.8334ZM46.3667 28.2625L49.1834 31.025C49.6167 31.45 49.6167 32.3 49.1834 32.725L47.0167 34.85L42.4667 30.3875L44.6334 28.2625C44.85 28.05 45.0667 27.8375 45.5 27.8375C45.9334 27.8375 46.15 28.05 46.3667 28.2625ZM45.7167 35.9125L32.7167 48.875H28.1667V44.4125L41.3834 31.45L45.7167 35.9125Z"
+                          fill="white"/>
+                </svg>
+                Запись к врачу
+            </a>
+            <a href="/online" class="button secondary-button">
+                <svg width="22" height="25" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.75 29.5533H0V24.18H7.75V29.5533ZM7.75 37.6133H0V42.9867H7.75V37.6133ZM12.9167 13.7557L7.44 8.06L3.77167 11.8482L9.27417 17.5708L12.9167 13.7557ZM25.8333 13.4333V5.37334H20.6667V13.4333H25.8333ZM62 24.18H54.25V29.5533H62V24.18ZM41.3333 13.4333V5.37334H36.1667V13.4333H41.3333ZM52.7258 17.5708L58.2283 11.8751L54.56 8.06L49.0833 13.7557L52.7258 17.5708ZM62 37.6133H54.25V42.9867H62V37.6133ZM49.0833 24.18V42.9867C49.0833 45.942 46.7583 48.36 43.9167 48.36H38.75V53.7333H23.25V48.36H18.0833C15.2417 48.36 12.9167 45.942 12.9167 42.9867V24.18C12.9167 21.2247 15.2417 18.8067 18.0833 18.8067H43.9167C46.7583 18.8067 49.0833 21.2247 49.0833 24.18ZM43.9167 24.18H18.0833V42.9867H43.9167V24.18ZM49.0833 53.4109L54.56 59.1067L58.2283 55.3185L52.7258 49.6227L49.0833 53.4109ZM9.27417 49.5959L3.7975 55.3185L7.44 59.1067L12.9167 53.4109L9.27417 49.5959Z"
+                          fill="white"/>
+                </svg>
+                Врачи онлайн
+            </a>
+        </div>
+
+    </main>
+    <footer>
+        <p class="footer-p">Теперь вы можете получить консультацию мгновенно через Telegram</p>
+    </footer>
+</div>
 </body>
 </html>
