@@ -1,0 +1,89 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Поднимаем все элементы вверх */
+    background-color: #F5FBF7; /* Фон страницы */
+}
+
+.container {
+    width: 100%;
+    max-width: 360px; /* Ограничение максимальной ширины экрана */
+    height: 100%;
+    max-height: 640px; /* Ограничение максимальной высоты экрана */
+    background-color: #F5FBF7;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px; /* Добавляем отступ сверху для лучшего визуального эффекта */
+}
+
+header, footer {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Поднимаем элементы в main вверх */
+    align-items: center;
+}
+
+.logo img {
+    width: 280px;
+}
+
+h1 {
+    font-size: 45px; /* Увеличиваем размер шрифта */
+    margin-bottom: 10px;
+    margin-top: -30px;
+    font-weight: bold;
+    letter-spacing: 2px; /* Добавляем межбуквенный интервал для большего эффекта */
+    text-transform: uppercase; /* Делаем текст заглавными буквами */
+
+    background-image: linear-gradient(to right, #0A5976, #0D95B2);
+    -webkit-background-clip: text; /* Используем градиент как текстовую заливку */
+    -webkit-text-fill-color: transparent; /* Делаем текст прозрачным, чтобы был виден градиент */
+}
+
+
+p {
+    font-size: 14px;
+    margin: 10px 0 30px 0;
+    color: #666;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.button {
+    display: block;
+    width: 160px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #1D8DAD; /* Основной цвет кнопки */
+    color: #fff;
+}
+
+.secondary-button {
+    background-color: #0C5979; /* Второй цвет кнопки */
+    color: #fff;
+}
