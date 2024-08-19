@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='appointment.css') }}">
+    <title>Подробнее о враче</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-doctor-detail">
+    <h2 class="h2-doctor-detail">Подробнее</h2>
+
+    <div class="doctor-info-detail">
+        <img id="doctor-img" alt="Доктор" class="doctor-img-detail">
+        <h3 id="doctor-name"></h3>
+        <p class="doctor-specialization-detail" id="doctor-specialization"></p>
+
+        <button class="doctor-detail-button doctor-detail-primary">Записаться</button>
+
+        <div class="doctor-description-detail">
+            <h4>Описание:</h4>
+            <p id="doctor-description"></p>
+        </div>
+
+        <div class="doctor-education-detail">
+            <h4>Образование:</h4>
+            <p id="doctor-education"></p>
+        </div>
+
+        <div class="doctor-experience-detail">
+            <h4>Стаж:</h4>
+            <p id="doctor-experience"></p>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+const doctorsData = {
+    1: {
+        id: 1,
+        name: "Бака Ревазович Сандухадзе",
+        specialization: "Кардиология",
+        description: "Руководитель центра сердечно-сосудистой диагностики. Кардиолог, врач функциональной диагностики, к.м.н. Автор более 20 научных работ: 9 статей, 12 тезис, соавторство в написании главы в книге «Хроническая сердечная недостаточность у больных ишемической болезнью сердца: стратегические подходы к принятию оптимального клинического решения».Чтение лекций в рамках сертификационного курса для врачей практического здравоохранения.",
+        image: "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13",
+        education: "Московский Государственный Университет, направление Лечебное Дело",
+        experience: "20 лет"
+    },
+    2: {
+        id: 2,
+        name: "Иван Петров",
+        specialization: "Кардиология",
+        description: "Специалист по кардиологии с 10-летним опытом...",
+        image: "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13",
+        education: "Санкт-Петербургский Государственный Университет, направление Кардиология",
+        experience: "10 лет"
+    }
+};
+
+const doctorId = '{{ doctor_id }}';
+
+console.log("Полученный doctorId:", doctorId);
+
+const doctor = doctorsData[doctorId];
+if (doctor) {
+    document.getElementById('doctor-name').textContent = doctor.name;
+    document.getElementById('doctor-specialization').textContent = doctor.specialization;
+    document.getElementById('doctor-description').textContent = doctor.description;
+    document.getElementById('doctor-img').src = doctor.image;
+    document.getElementById('doctor-education').textContent = doctor.education;
+    document.getElementById('doctor-experience').textContent = doctor.experience;
+} else {
+    document.body.innerHTML = '<p>Информация о данном враче не найдена.</p>';
+}
+</script>
+
+</body>
+</html>
