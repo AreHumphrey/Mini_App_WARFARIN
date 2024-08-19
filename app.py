@@ -8,10 +8,9 @@ def index():
     return render_template('./pages/index.html')
 
 
-@app.route('/book')
+@app.route('/appointment')
 def book():
-    # Логика для страницы записи к врачу
-    return "<h1>Запись к врачу</h1>"
+    return render_template('./pages/appointment.html')
 
 
 @app.route('/online')
