@@ -7,15 +7,21 @@ body, html {
     justify-content: center;
     align-items: flex-start;
     background-color: #F5FBF7;
-    font-family: 'Poppins', monospace;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-.container-appointment {
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
     width: 100%;
     max-width: 360px;
-    height: 100%;
-    max-height: 640px;
-    background-color: #FFFFFF;
+
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -24,70 +30,91 @@ body, html {
     box-sizing: border-box;
     margin-top: 20px;
     overflow: hidden;
+    font-family: 'Poppins', monospace;
 }
 
-.h2-appointment {
+.h2-specialization {
     text-align: left;
     color: #0A5976;
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 17px;
+    margin-bottom: 5px;
+    margin-top: 10px;
     font-weight: 800;
 }
 
-.calendar {
+.calendar-container {
+    background-color: #F5FBF7;
+    border-radius: 10px;
+    padding: 20px;
     width: 100%;
-    margin-bottom: 15px;
+    box-sizing: border-box;
+    margin-bottom: -20px;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-.calendar-month {
-    color: #0A5976;
+.calendar-icon {
+    width: 38px;
+    height: 42px;
+    margin-right: 8px;
+}
+
+.calendar-title {
+    display: flex;
+    align-items: center;
     font-size: 18px;
-    font-weight: 600;
-}
-
-.calendar-logo {
-    width: 30px;
-    height: 30px;
-}
-
-.calendar-days {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    color: #647A80;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.calendar-dates {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 5px;
-    color: #2C2C2C;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.calendar-dates span.active {
-    color: #FFFFFF;
-    background-color: #0A5976;
-    border-radius: 50%;
-    padding: 5px 10px;
-}
-
-.available-time {
-    text-align: left;
     color: #0A5976;
-    font-size: 14px;
     font-weight: 600;
-    margin-bottom: 10px;
+}
+
+.calendar-arrow-left img,
+.calendar-arrow-right img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #0A5976;
+}
+
+.calendar-table td {
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.calendar-table td.available {
+    background-color: #D8E4E8;
+    color: #0A5976;
+}
+
+.calendar-table td.selected {
+    background-color: #0C5979;
+    color: #FFFFFF;
+}
+
+.calendar-table td:hover {
+    background-color: #E0F0FF;
+}
+
+.calendar-bottom-border {
+    border-bottom: 1px solid #D8E4E8;
+    margin-top: 10px;
 }
 
 .time-options {
@@ -98,65 +125,182 @@ body, html {
 }
 
 .time-button {
-    background-color: #0A5976;
-    color: #FFFFFF;
+    background-color: #1D8DAD;
+    color: white;
+    border: none;
+    border-radius: 20px;
     padding: 5px 15px;
-    border: none;
-    border-radius: 20px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
 }
 
-.time-button:hover {
-    background-color: #00354A;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.label {
-    display: block;
-    color: #0A5976;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.input, .textarea, .file-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #BDBDBD;
-    border-radius: 5px;
-    font-size: 12px;
-    color: #2C2C2C;
+.selected-date-time {
     font-family: 'Poppins', monospace;
+    font-size: 14px;
+    color: #0C5979;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.textarea {
-    height: 100px;
-    resize: none;
+.appointment-h2 {
+    text-align: left;
+    color: #0A5976;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', monospace;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
-.file-input {
-    padding: 5px;
-}
 
-.appointment-button {
+
+.submit-button {
     background-color: #0A5976;
-    color: #FFFFFF;
-    padding: 10px;
+    color: white;
     border: none;
     border-radius: 20px;
+    padding: 10px 5px;
+    font-weight: bold;
+    margin: 30px auto 10px auto;
     cursor: pointer;
+    width: 100%;
     text-align: center;
+    display: block;
+}
+
+
+.submit-button:hover {
+    background-color: #064960;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-size: 14px;
+    color: #0A5976;
+    font-weight: 600;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="file"] {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #1D8DAD;
+}
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button.calendar-arrow-left,
+button.calendar-arrow-right {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.calendar-title svg {
+    margin-right: 8px;
+}
+
+.calendar-title span {
+    margin-left: 8px;
+    font-family: 'Poppins', monospace;
+    font-size: 16px;
+}
+.styled-button {
+    margin-top: 10px;
+    background-color: #1D8DAD;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-family: 'Poppins', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+}
+
+.styled-button:hover {
+    background-color: #0C5979;
+}
+
+#file-name {
+    margin-left: 10px;
+    font-family: 'Poppins', monospace;
+    font-size: 14px;
+    color: #0C5979;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label.h2-specialization {
+    display: inline-block;
+    font-family: 'Poppins', monospace;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    color: #0A5976;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.custom-checkbox-label {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', monospace;
+    font-size: 16px;
+    color: #0A5976;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.appointment-button:hover {
-    background-color: #00354A;
+.custom-checkbox {
+    display: none;
 }
+
+.checkmark {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    border: 2px solid #1D8DAD;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.custom-checkbox:checked + .checkmark {
+    background-color: #0A5976;
+    border-color: #0A5976;
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0A5976;
+    transform: translate(-50%, -50%);
+}
+
+.custom-checkbox:checked + .checkmark::after {
+    display: block;
+}
+
+
+
+
+
