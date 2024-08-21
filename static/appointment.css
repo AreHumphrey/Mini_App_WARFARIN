@@ -1,0 +1,358 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #F5FBF7;
+}
+
+.container {
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    max-height: 640px;
+    background-color: #F5FBF7;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.h2-specialization {
+    text-align: left;
+    color: #0A5976;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', monospace;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.specialization-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
+    z-index: 10;
+    height: 50px;
+}
+
+.specialization-container::-webkit-scrollbar {
+    display: none;
+}
+
+.specialization-scroll {
+    display: flex;
+    gap: 10px;
+    padding: 0 5px;
+}
+
+.specialization {
+    background-color: #FFFFFF;
+    color: #2C2C2C;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 1px solid #BDBDBD;
+    font-family: 'Poppins', monospace;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+    font-size: 10px;
+}
+
+.specialization:hover {
+    background-color: #1D8DAD;
+    color: #FFFFFF;
+
+}
+
+.doctor-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100% - 60px);
+    z-index: 1;
+    position: relative;
+}
+
+.doctor-card {
+    display: flex;
+    background-color: #E6F0F4;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.doctor-card img {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 10px;
+    margin-right: 15px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.doctor-info {
+    flex-grow: 1;
+}
+
+.doctor-info h3 {
+    margin: 0;
+    font-size: 10px;
+    color: #0C5979;
+    font-family: 'Poppins', monospace;
+}
+
+.doctor-info p {
+    margin: 3px 0;
+    color: #647A80;
+    font-size: 8px;
+    font-family: 'Poppins', monospace;
+}
+
+.p-specialization {
+    font-weight: bold;
+    color: #424343;
+}
+
+.p-description {
+    font-size: 6px;
+}
+
+
+.doctor-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.doctor-text-button {
+    color: #0C5979;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    font-family: 'Poppins', monospace;
+
+}
+
+.doctor-text-button:hover {
+    color: #1D8DAD;
+}
+
+
+.doctor-button.primary {
+    background-color: #35758F;
+    color: #fff;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.doctor-button.primary:hover {
+    background-color: #0C5979;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 10px;
+    color: #2C2C2C;
+}
+
+footer strong {
+    font-weight: bold;
+    color: #0C5979;
+}
+
+.no-doctors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.no-doctors img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.no-doctors p {
+    color: #0A5976;
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', monospace;
+    font-weight: 800;
+    text-align: center;
+}
+
+
+
+.container-doctor-detail {
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    max-height: 640px;
+    background-color: #F5FBF7;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    overflow-y: auto;
+    font-family: 'Poppins', monospace;
+}
+
+.h2-doctor-detail {
+    text-align: left;
+    color: #0A5976;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', monospace;
+    font-weight: 800;
+}
+
+.doctor-info-detail {
+    text-align: center;
+}
+
+.doctor-img-detail {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid #D8E4E8;
+    object-fit: cover;
+    object-position: center;
+}
+
+.doctor-specialization-detail {
+    color: #424343;
+    font-size: 13px;
+    margin-bottom: 7px;
+    font-weight: 600;
+    font-family: 'Poppins', monospace;
+}
+
+h3#doctor-name {
+    margin-bottom: -15px;
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2C2C2C;
+    font-family: 'Poppins', monospace;
+}
+
+.doctor-description-detail,
+.doctor-education-detail,
+.doctor-experience-detail {
+    text-align: left;
+    color: #647A80;
+    font-size: 10px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Poppins', monospace;
+    position: relative;
+    line-height: 1.2;
+}
+
+.doctor-description-detail::after,
+.doctor-education-detail::after,
+.doctor-experience-detail::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #647A80;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+.doctor-experience-detail::after {
+    height: 0.5px;
+}
+
+.doctor-description-detail h4,
+.doctor-education-detail h4,
+.doctor-experience-detail h4 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #424343;
+    font-family: 'Poppins', monospace;
+}
+
+.selected-date-time {
+    font-family: 'Poppins', monospace;
+    font-size: 14px;
+    color: #0C5979;
+}
+
+.doctor-detail-button.doctor-detail-primary {
+    background-color: #0C5979;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 90px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-family: 'Poppins', monospace;
+    text-decoration: none;
+}
+
+.doctor-detail-button.doctor-detail-primary:hover {
+    background-color: #00354A;
+}
+
+
+.doctor-detail-footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 12px;
+    color: #0A5976;
+    font-weight: bold;
+    padding: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5FBF7;
+    border-top: 1px solid #D8E4E8;
+}
+
+
+
+
+
+
+
+
+
+
+
+

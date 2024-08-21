@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='appointment.css') }}">
+    <title>Выбор врача</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="h2-specialization">Запись к врачу</h2>
+    <div class="specialization-container">
+        <div class="specialization-scroll">
+            <button class="specialization" onclick="loadDoctors('Кардиолог')">Кардиолог</button>
+            <button class="specialization" onclick="loadDoctors('Гематолог')">Гематолог</button>
+            <button class="specialization" onclick="loadDoctors('Терапевт')">Терапевт</button>
+            <button class="specialization" onclick="loadDoctors('Эндокринолог')">Эндокринолог</button>
+            <button class="specialization" onclick="loadDoctors('Нефролог')">Нефролог</button>
+            <button class="specialization" onclick="loadDoctors('Гериатр')">Гериатр</button>
+            <button class="specialization" onclick="loadDoctors('Фармаколог')">Фармаколог</button>
+            <button class="specialization" onclick="loadDoctors('Ангиолог')">Ангиолог</button>
+            <button class="specialization" onclick="loadDoctors('Хирург')">Хирург</button>
+            <button class="specialization" onclick="loadDoctors('Невролог')">Невролог</button>
+            <button class="specialization" onclick="loadDoctors('Реабилитолог')">Реабилитолог</button>
+            <button class="specialization" onclick="loadDoctors('Нутрициолог')">Нутрициолог/Диетолог</button>
+            <button class="specialization" onclick="loadDoctors('Пульмонолог')">Пульмонолог</button>
+            <button class="specialization" onclick="loadDoctors('Психолог')">Психолог/Психотерапевт</button>
+            <button class="specialization" onclick="loadDoctors('Гастроэнтеролог')">Гастроэнтеролог</button>
+            <button class="specialization" onclick="loadDoctors('Инфекционист')">Инфекционист</button>
+            <button class="specialization" onclick="loadDoctors('Ревматолог')">Ревматолог</button>
+            <button class="specialization" onclick="loadDoctors('Физиотерапевт')">Физиотерапевт</button>
+        </div>
+    </div>
+
+    <div class="doctor-list" id="doctor-list">
+        <!-- Врачи будут загружаться здесь -->
+    </div>
+
+    <div class="no-doctors" id="no-doctors">
+        <img src="{{ url_for('static', filename='images/sticker.webp') }}" alt="sticker">
+        <p>По данной специализации пока нет специалистов</p>
+    </div>
+</div>
+
+<script>
+    const doctorsData = {
+        "Кардиолог": [
+            {
+                "id": 1,
+                "name": "Бака Ревазович Сандухадзе",
+                "specialization": "Кардиология",
+                "description": "Принимает в центре кардиологии и сосудистой хирургии. Проводит комплексные обследования пациентов.",
+                "image": "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13"
+            },
+            {
+                "id": 2,
+                "name": "Иван Петров",
+                "specialization": "Кардиология",
+                "description": "Специалист по кардиологии с 10-летним опытом.",
+                "image": "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13"
+            },
+            {
+                "id": 2,
+                "name": "Иван Петров",
+                "specialization": "Кардиология",
+                "description": "Специалист по кардиологии с 10-летним опытом.",
+                "image": "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13"
+            },
+            {
+                "id": 2,
+                "name": "Иван Петров",
+                "specialization": "Кардиология",
+                "description": "Специалист по кардиологии с 10-летним опытом.",
+                "image": "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13"
+            },
+            {
+                "id": 2,
+                "name": "Иван Петров",
+                "specialization": "Кардиология",
+                "description": "Специалист по кардиологии с 10-летним опытом.",
+                "image": "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13"
+            },
+            {
+                "id": 2,
+                "name": "Иван Петров",
+                "specialization": "Кардиология",
+                "description": "Специалист по кардиологии с 10-летним опытом.",
+                "image": "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13"
+            },
+            {
+                "id": 2,
+                "name": "Иван Петров",
+                "specialization": "Кардиология",
+                "description": "Специалист по кардиологии с 10-летним опытом.",
+                "image": "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13"
+            }
+        ],
+        "Гематолог": [
+            {
+                "id": 3,
+                "name": "Мария Иванова",
+                "specialization": "Гематология",
+                "description": "Проводит диагностику и лечение заболеваний крови.",
+                "image": "https://avatars.mds.yandex.net/i?id=cf2c763745230980b64a3ae3b70d9bf3_l-6419094-images-thumbs&n=13"
+            }
+        ]
+    };
+
+    function loadDoctors(specialization) {
+        const doctorList = document.getElementById('doctor-list');
+        const noDoctors = document.getElementById('no-doctors');
+        doctorList.innerHTML = '';
+
+        const doctors = doctorsData[specialization];
+        if (doctors && doctors.length > 0) {
+            noDoctors.style.display = 'none';
+            doctors.forEach(doctor => {
+                const doctorCard = document.createElement('div');
+                doctorCard.className = 'doctor-card';
+
+                doctorCard.innerHTML = `
+                    <img src="${doctor.image}" alt="Доктор">
+                    <div class="doctor-info">
+                        <h3>${doctor.name}</h3>
+                        <p class="p-specialization">Специализация: ${doctor.specialization}</p>
+                        <p class="p-description">${doctor.description}</p>
+                        <div class="doctor-buttons">
+                            <a href="/doctor/${doctor.id}" class="doctor-text-button">Подробнее</a>
+                            <a href="/appointment/${doctor.id}" class="doctor-button primary">Записаться</a>
+
+                        </div>
+                    </div>
+                `;
+
+                doctorList.appendChild(doctorCard);
+            });
+        } else {
+            noDoctors.style.display = 'flex';
+            doctorList.innerHTML = '';
+        }
+    }
+
+    loadDoctors('Кардиолог');
+</script>
+
+
+</body>
+</html>
